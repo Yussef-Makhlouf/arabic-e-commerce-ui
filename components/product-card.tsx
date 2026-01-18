@@ -4,6 +4,8 @@ import { Star, ShoppingCart } from 'lucide-react'
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useCart } from '@/lib/cart-context'
+import { useToast } from '@/hooks/use-toast'
 
 interface ProductCardProps {
   id: string
@@ -27,6 +29,22 @@ export default function ProductCard({
   badge
 }: ProductCardProps) {
   const [isAdded, setIsAdded] = useState(false)
+  const { addItem } = useCart()
+  const { toast } = useToast()
+
+  const handleAddToCart = (e: React.MouseEvent) => {
+    e.preventDefault()
+    e.stopPropagation()
+    addItem(id, 1)
+    setIsAdded(true)
+    toast({
+      title: "تم إضافة المنتج للسلة",
+      description: `${name} - تم الإضافة بنجاح`,
+    })
+
+    setTimeout(() => setIsAdded(false), 2000)
+  }
+
   const discount = originalPrice ? Math.round(((originalPrice - price) / originalPrice) * 100) : 0
 
   return (
@@ -41,7 +59,7 @@ export default function ProductCard({
             height={300}
             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
           />
-          
+
           {/* Badge and Discount */}
           <div className="absolute top-3 left-3 flex flex-col gap-2">
             {badge && (
@@ -58,7 +76,7 @@ export default function ProductCard({
 
           {/* Quick Add to Cart - Revealed on Hover */}
           <button
-            onClick={() => setIsAdded(true)}
+            onClick={handleAddToCart}
             className="absolute bottom-0 inset-x-0 bg-accent text-accent-foreground py-3 flex items-center justify-center gap-2 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"
           >
             <ShoppingCart size={18} />
@@ -95,12 +113,11 @@ export default function ProductCard({
 
           {/* Add to Cart Button - Mobile */}
           <button
-            onClick={() => setIsAdded(true)}
-            className={`w-full py-2 rounded-lg transition-all font-semibold text-sm md:hidden ${
-              isAdded
+            onClick={handleAddToCart}
+            className={`w-full py-2 rounded-lg transition-all font-semibold text-sm md:hidden ${isAdded
                 ? 'bg-primary text-primary-foreground'
                 : 'bg-secondary text-secondary-foreground hover:bg-accent'
-            }`}
+              }`}
           >
             {isAdded ? '✓ تم الإضافة' : 'أضف للسلة'}
           </button>

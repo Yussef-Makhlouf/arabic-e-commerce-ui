@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { ChevronRight, ChevronLeft } from 'lucide-react'
 
 interface ProductGalleryProps {
-  images: string[]
+  images: { url: string; alt: string }[]
   productName: string
 }
 
@@ -25,8 +25,8 @@ export default function ProductGallery({ images, productName }: ProductGalleryPr
       {/* Main Image - RTL Responsive */}
       <div className="relative bg-muted rounded-lg overflow-hidden aspect-square">
         <Image
-          src={images[selectedIndex] || "/placeholder.svg"}
-          alt={productName}
+          src={images[selectedIndex]?.url || "/placeholder.svg"}
+          alt={images[selectedIndex]?.alt || productName}
           fill
           className="object-cover"
           priority
@@ -65,13 +65,12 @@ export default function ProductGallery({ images, productName }: ProductGalleryPr
             <button
               key={index}
               onClick={() => setSelectedIndex(index)}
-              className={`relative aspect-square rounded-lg overflow-hidden border-2 transition-all ${
-                selectedIndex === index ? 'border-accent' : 'border-border'
-              }`}
+              className={`relative aspect-square rounded-lg overflow-hidden border-2 transition-all ${selectedIndex === index ? 'border-accent' : 'border-border'
+                }`}
             >
               <Image
-                src={image || "/placeholder.svg"}
-                alt={`صورة ${index + 1}`}
+                src={image.url || "/placeholder.svg"}
+                alt={image.alt || `صورة ${index + 1}`}
                 fill
                 className="object-cover"
               />

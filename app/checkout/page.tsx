@@ -5,11 +5,13 @@ import React from "react"
 import { useState } from 'react'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
+import { useCart } from '@/lib/cart-context'
 import { Check, Truck, Shield, RotateCcw } from 'lucide-react'
 import Link from 'next/link'
 
 export default function CheckoutPage() {
   const [step, setStep] = useState(1)
+  const { clearCart } = useCart()
   const [formData, setFormData] = useState({
     email: '',
     phone: '',
@@ -36,6 +38,7 @@ export default function CheckoutPage() {
       setStep(step + 1)
     } else {
       setOrderComplete(true)
+      clearCart()
     }
   }
 
@@ -109,11 +112,10 @@ export default function CheckoutPage() {
             { num: 3, title: 'تأكيد الطلب' }
           ].map((s) => (
             <div key={s.num} className="text-center">
-              <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold mx-auto mb-2 ${
-                step >= s.num 
-                  ? 'bg-primary text-primary-foreground' 
+              <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold mx-auto mb-2 ${step >= s.num
+                  ? 'bg-primary text-primary-foreground'
                   : 'bg-secondary text-muted-foreground'
-              }`}>
+                }`}>
                 {step > s.num ? <Check size={20} /> : s.num}
               </div>
               <p className="text-sm font-semibold">{s.title}</p>

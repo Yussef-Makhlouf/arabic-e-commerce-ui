@@ -1,9 +1,11 @@
 'use client'
 
 import { useState } from 'react'
-import { useParams } from 'next/navigation'
+import { useParams, useRouter } from 'next/navigation'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
+import { useCart } from '@/lib/cart-context'
+import { useToast } from '@/hooks/use-toast'
 import ProductGallery from '@/components/product-gallery'
 import ProductSpecs from '@/components/product-specs'
 import ProductReviews from '@/components/product-reviews'
@@ -17,6 +19,26 @@ export default function ProductPage() {
   const product = getProductById(productId)
   const [quantity, setQuantity] = useState(1)
   const [isFavorited, setIsFavorited] = useState(false)
+  const { addItem } = useCart()
+  const { toast } = useToast()
+  const router = useRouter()
+
+  const handleAddToCart = () => {
+    if (product) {
+      addItem(product.id, quantity)
+      toast({
+        title: "تم إضافة المنتج للسلة",
+        description: `${product.name} - الكمية: ${quantity}`,
+      })
+    }
+  }
+
+  const handleBuyNow = () => {
+    if (product) {
+      addItem(product.id, quantity)
+      router.push('/checkout')
+    }
+  }
 
   if (!product) {
     return (
@@ -74,11 +96,10 @@ export default function ProductPage() {
                       <Star
                         key={i}
                         size={16}
-                        className={`${
-                          i < Math.floor(product.rating)
+                        className={`${i < Math.floor(product.rating)
                             ? 'fill-secondary text-secondary'
                             : 'text-muted-foreground'
-                        }`}
+                          }`}
                       />
                     ))}
                   </div>
@@ -127,10 +148,16 @@ export default function ProductPage() {
 
                 {/* CTA Buttons */}
                 <div className="space-y-3 pt-4">
-                  <button className="w-full bg-accent text-accent-foreground py-4 rounded-lg font-semibold hover:bg-accent/90 transition-colors text-lg">
+                  <button
+                    onClick={handleAddToCart}
+                    className="w-full bg-accent text-accent-foreground py-4 rounded-lg font-semibold hover:bg-accent/90 transition-colors text-lg"
+                  >
                     أضف إلى السلة ({totalPrice.toLocaleString('ar-SA')} ر.س)
                   </button>
-                  <button className="w-full border-2 border-accent text-accent py-4 rounded-lg font-semibold hover:bg-accent/10 transition-colors">
+                  <button
+                    onClick={handleBuyNow}
+                    className="w-full border-2 border-accent text-accent py-4 rounded-lg font-semibold hover:bg-accent/10 transition-colors"
+                  >
                     اشترِ الآن
                   </button>
                 </div>
@@ -139,11 +166,10 @@ export default function ProductPage() {
                 <div className="flex gap-3 pt-4">
                   <button
                     onClick={() => setIsFavorited(!isFavorited)}
-                    className={`flex-1 py-2 rounded-lg border transition-colors flex items-center justify-center gap-2 ${
-                      isFavorited
+                    className={`flex-1 py-2 rounded-lg border transition-colors flex items-center justify-center gap-2 ${isFavorited
                         ? 'bg-secondary border-secondary text-secondary-foreground'
                         : 'border-border hover:border-accent'
-                    }`}
+                      }`}
                   >
                     <Heart size={18} fill={isFavorited ? 'currentColor' : 'none'} />
                     {isFavorited ? 'في المفضلة' : 'أضف للمفضلة'}

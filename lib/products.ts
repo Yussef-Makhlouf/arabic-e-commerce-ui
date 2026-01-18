@@ -57,12 +57,12 @@ export const smartphones: Product[] = [
     categoryLabel: 'هواتف ذكية',
     price: 3499,
     originalPrice: 4299,
-    image: 'https://images.unsplash.com/photo-1511707267537-b85faf00021e?w=400&h=400&fit=crop',
+    image: '/products/phone-pro-max.jpg',
     images: [
-      { url: 'https://images.unsplash.com/photo-1511707267537-b85faf00021e?w=800&h=800&fit=crop', alt: 'الهاتف من الأمام' },
-      { url: 'https://images.unsplash.com/photo-1516321318423-f06f70674b0c?w=800&h=800&fit=crop', alt: 'الهاتف من الخلف' },
-      { url: 'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=800&h=800&fit=crop', alt: 'الهاتف من الجانب' },
-      { url: 'https://images.unsplash.com/photo-1493857671505-72967e2e2760?w=800&h=800&fit=crop', alt: 'الهاتف والملحقات' }
+      { url: '/products/phone-pro-max.jpg', alt: 'الهاتف من الأمام' },
+      { url: '/products/phone-pro-max.jpg', alt: 'الهاتف من الخلف' },
+      { url: '/products/phone-pro-max.jpg', alt: 'الهاتف من الجانب' },
+      { url: '/products/phone-pro-max.jpg', alt: 'الهاتف والملحقات' }
     ],
     rating: 4.8,
     reviews: [
@@ -150,10 +150,10 @@ export const smartphones: Product[] = [
     categoryLabel: 'هواتف ذكية',
     price: 2899,
     originalPrice: 3699,
-    image: 'https://images.unsplash.com/photo-1516321318423-f06f70674b0c?w=400&h=400&fit=crop',
+    image: '/products/phone-pro-max.jpg',
     images: [
-      { url: 'https://images.unsplash.com/photo-1516321318423-f06f70674b0c?w=800&h=800&fit=crop', alt: 'الهاتف من الأمام' },
-      { url: 'https://images.unsplash.com/photo-1511707267537-b85faf00021e?w=800&h=800&fit=crop', alt: 'الهاتف من الخلف' }
+      { url: '/products/phone-pro-max.jpg', alt: 'الهاتف من الأمام' },
+      { url: '/products/phone-pro-max.jpg', alt: 'الهاتف من الخلف' }
     ],
     rating: 4.6,
     reviews: 189,
@@ -209,9 +209,9 @@ export const smartphones: Product[] = [
     categoryLabel: 'هواتف ذكية',
     price: 2199,
     originalPrice: 2899,
-    image: 'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=400&h=400&fit=crop',
+    image: '/products/phone-pro-max.jpg',
     images: [
-      { url: 'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=800&h=800&fit=crop', alt: 'الهاتف من الجانب' }
+      { url: '/products/phone-pro-max.jpg', alt: 'الهاتف من الجانب' }
     ],
     rating: 4.5,
     reviews: 156,
@@ -240,9 +240,9 @@ export const smartphones: Product[] = [
     categoryLabel: 'هواتف ذكية',
     price: 1299,
     originalPrice: 1699,
-    image: 'https://images.unsplash.com/photo-1493857671505-72967e2e2760?w=400&h=400&fit=crop',
+    image: '/products/phone-pro-max.jpg',
     images: [
-      { url: 'https://images.unsplash.com/photo-1493857671505-72967e2e2760?w=800&h=800&fit=crop', alt: 'الهاتف والملحقات' }
+      { url: '/products/phone-pro-max.jpg', alt: 'الهاتف والملحقات' }
     ],
     rating: 4.2,
     reviews: 87,
@@ -275,10 +275,10 @@ export const laptops: Product[] = [
     categoryLabel: 'أجهزة محمولة',
     price: 6999,
     originalPrice: 8499,
-    image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400&h=400&fit=crop',
+    image: '/products/laptop-pro-ultra.jpg',
     images: [
-      { url: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800&h=800&fit=crop', alt: 'الجهاز مفتوح' },
-      { url: 'https://images.unsplash.com/photo-1527814050087-3793815479db?w=800&h=800&fit=crop', alt: 'الجهاز من الجانب' }
+      { url: '/products/laptop-pro-ultra.jpg', alt: 'الجهاز مفتوح' },
+      { url: '/products/laptop-pro-ultra.jpg', alt: 'الجهاز من الجانب' }
     ],
     rating: 4.9,
     reviews: [
@@ -345,9 +345,9 @@ export const laptops: Product[] = [
     categoryLabel: 'أجهزة محمولة',
     price: 4999,
     originalPrice: 6299,
-    image: 'https://images.unsplash.com/photo-1527814050087-3793815479db?w=400&h=400&fit=crop',
+    image: '/products/laptop-pro-ultra.jpg',
     images: [
-      { url: 'https://images.unsplash.com/photo-1527814050087-3793815479db?w=800&h=800&fit=crop', alt: 'الجهاز من الأعلى' }
+      { url: '/products/laptop-pro-ultra.jpg', alt: 'الجهاز من الأعلى' }
     ],
     rating: 4.7,
     reviews: 142,
@@ -385,9 +385,9 @@ export const laptops: Product[] = [
     categoryLabel: 'أجهزة محمولة',
     price: 2299,
     originalPrice: 2999,
-    image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=400&h=400&fit=crop',
+    image: '/products/laptop-pro-ultra.jpg',
     images: [
-      { url: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&h=800&fit=crop', alt: 'الجهاز مفتوح' }
+      { url: '/products/laptop-pro-ultra.jpg', alt: 'الجهاز مفتوح' }
     ],
     rating: 4.3,
     reviews: 98,
@@ -419,9 +419,9 @@ export const accessories: Product[] = [
     categoryLabel: 'الملحقات',
     price: 1299,
     originalPrice: 1799,
-    image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=400&fit=crop',
+    image: '/products/headphones-elite.jpg',
     images: [
-      { url: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&h=800&fit=crop', alt: 'السماعات' }
+      { url: '/products/headphones-elite.jpg', alt: 'السماعات' }
     ],
     rating: 4.8,
     reviews: 412,
@@ -451,9 +451,9 @@ export const accessories: Product[] = [
     categoryLabel: 'الملحقات',
     price: 899,
     originalPrice: 1299,
-    image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=400&fit=crop',
+    image: '/products/smartwatch-premium.jpg',
     images: [
-      { url: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&h=800&fit=crop', alt: 'الساعة الذكية' }
+      { url: '/products/smartwatch-premium.jpg', alt: 'الساعة الذكية' }
     ],
     rating: 4.6,
     reviews: 289,
@@ -482,9 +482,9 @@ export const accessories: Product[] = [
     categoryLabel: 'الملحقات',
     price: 599,
     originalPrice: 799,
-    image: 'https://images.unsplash.com/photo-1587829191301-dc798b83add3?w=400&h=400&fit=crop',
+    image: '/products/keyboard-mechanical.jpg',
     images: [
-      { url: 'https://images.unsplash.com/photo-1587829191301-dc798b83add3?w=800&h=800&fit=crop', alt: 'لوحة المفاتيح' }
+      { url: '/products/keyboard-mechanical.jpg', alt: 'لوحة المفاتيح' }
     ],
     rating: 4.7,
     reviews: 345,
@@ -513,9 +513,9 @@ export const accessories: Product[] = [
     categoryLabel: 'الملحقات',
     price: 299,
     originalPrice: 449,
-    image: 'https://images.unsplash.com/photo-1527814050087-3793815479db?w=400&h=400&fit=crop',
+    image: '/products/keyboard-mechanical.jpg',
     images: [
-      { url: 'https://images.unsplash.com/photo-1527814050087-3793815479db?w=800&h=800&fit=crop', alt: 'الماوس' }
+      { url: '/products/keyboard-mechanical.jpg', alt: 'الماوس' }
     ],
     rating: 4.5,
     reviews: 267,
@@ -544,9 +544,9 @@ export const accessories: Product[] = [
     categoryLabel: 'الملحقات',
     price: 199,
     originalPrice: 299,
-    image: 'https://images.unsplash.com/photo-1625948515291-69613efd103f?w=400&h=400&fit=crop',
+    image: '/products/headphones-elite.jpg',
     images: [
-      { url: 'https://images.unsplash.com/photo-1625948515291-69613efd103f?w=800&h=800&fit=crop', alt: 'الشاحن' }
+      { url: '/products/headphones-elite.jpg', alt: 'الشاحن' }
     ],
     rating: 4.6,
     reviews: 156,
@@ -575,9 +575,9 @@ export const accessories: Product[] = [
     categoryLabel: 'الملحقات',
     price: 149,
     originalPrice: 249,
-    image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=400&fit=crop',
+    image: '/products/laptop-pro-ultra.jpg',
     images: [
-      { url: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&h=800&fit=crop', alt: 'الحقيبة' }
+      { url: '/products/laptop-pro-ultra.jpg', alt: 'الحقيبة' }
     ],
     rating: 4.4,
     reviews: 203,
@@ -610,9 +610,9 @@ export const displays: Product[] = [
     categoryLabel: 'الشاشات',
     price: 2199,
     originalPrice: 2899,
-    image: 'https://images.unsplash.com/photo-1527814050087-3793815479db?w=400&h=400&fit=crop',
+    image: '/products/monitor-4k-curved.jpg',
     images: [
-      { url: 'https://images.unsplash.com/photo-1527814050087-3793815479db?w=800&h=800&fit=crop', alt: 'الشاشة' }
+      { url: '/products/monitor-4k-curved.jpg', alt: 'الشاشة' }
     ],
     rating: 4.7,
     reviews: 178,
@@ -649,9 +649,9 @@ export const displays: Product[] = [
     categoryLabel: 'الشاشات',
     price: 1599,
     originalPrice: 2199,
-    image: 'https://images.unsplash.com/photo-1523206489230-c9d9b145a900?w=400&h=400&fit=crop',
+    image: '/products/monitor-4k-curved.jpg',
     images: [
-      { url: 'https://images.unsplash.com/photo-1523206489230-c9d9b145a900?w=800&h=800&fit=crop', alt: 'الشاشة' }
+      { url: '/products/monitor-4k-curved.jpg', alt: 'الشاشة' }
     ],
     rating: 4.6,
     reviews: 145,
@@ -680,9 +680,9 @@ export const displays: Product[] = [
     categoryLabel: 'الشاشات',
     price: 899,
     originalPrice: 1299,
-    image: 'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=400&h=400&fit=crop',
+    image: '/products/monitor-4k-curved.jpg',
     images: [
-      { url: 'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=800&h=800&fit=crop', alt: 'شاشة الألعاب' }
+      { url: '/products/monitor-4k-curved.jpg', alt: 'شاشة الألعاب' }
     ],
     rating: 4.8,
     reviews: 234,
@@ -712,9 +712,9 @@ export const displays: Product[] = [
     categoryLabel: 'الشاشات',
     price: 3499,
     originalPrice: 4499,
-    image: 'https://images.unsplash.com/photo-1551707267-7cc46afd69f3?w=400&h=400&fit=crop',
+    image: '/products/monitor-4k-curved.jpg',
     images: [
-      { url: 'https://images.unsplash.com/photo-1551707267-7cc46afd69f3?w=800&h=800&fit=crop', alt: 'الشاشة الواسعة' }
+      { url: '/products/monitor-4k-curved.jpg', alt: 'الشاشة الواسعة' }
     ],
     rating: 4.9,
     reviews: 89,

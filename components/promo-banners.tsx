@@ -2,7 +2,8 @@
 
 import Link from 'next/link'
 import { Zap, Percent, Truck } from 'lucide-react'
-import { promotions } from '@/lib/mock-data'
+// import { promotions } from '@/lib/mock-data' - Removed as unused and we are moving away from mock-data
+
 
 const promos = [
   {
@@ -50,9 +51,8 @@ export default function PromoBanners() {
               <Link
                 key={promo.id}
                 href="#"
-                className={`group relative overflow-hidden rounded-lg transition-all duration-300 ${
-                  promo.size === 'lg' ? 'md:col-span-2 md:row-span-2' : ''
-                }`}
+                className={`group relative overflow-hidden rounded-lg transition-all duration-300 ${promo.size === 'lg' ? 'md:col-span-2 md:row-span-2' : ''
+                  }`}
               >
                 {/* Gradient Background */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${promo.color} opacity-90`} />
@@ -63,9 +63,8 @@ export default function PromoBanners() {
                 </div>
 
                 {/* Content */}
-                <div className={`relative px-6 py-8 md:px-8 md:py-12 h-full flex flex-col justify-between group-hover:translate-x-1 transition-transform ${
-                  promo.size === 'lg' ? 'min-h-64' : 'min-h-40'
-                }`}>
+                <div className={`relative px-6 py-8 md:px-8 md:py-12 h-full flex flex-col justify-between group-hover:translate-x-1 transition-transform ${promo.size === 'lg' ? 'min-h-64' : 'min-h-40'
+                  }`}>
                   {/* Top Content */}
                   <div className="space-y-2">
                     <div className="flex items-center gap-3">

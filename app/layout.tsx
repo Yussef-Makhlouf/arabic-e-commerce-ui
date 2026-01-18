@@ -3,10 +3,11 @@ import type { Metadata } from 'next'
 import { Noto_Sans_Arabic, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { CartProvider } from '@/lib/cart-context'
+import { Toaster } from '@/components/ui/toaster'
 import './globals.css'
 
 // Arabic-optimized font with Latin fallback
-const arabicFont = Noto_Sans_Arabic({ 
+const arabicFont = Noto_Sans_Arabic({
   subsets: ['arabic', 'latin'],
   weight: ['300', '400', '500', '600', '700']
 });
@@ -42,6 +43,8 @@ export const metadata: Metadata = {
   },
 }
 
+import { AuthProvider } from '@/lib/auth-context'
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -54,9 +57,12 @@ export default function RootLayout({
         <meta name="theme-color" content="#1a1a2e" />
       </head>
       <body className={`${arabicFont.className} font-sans antialiased bg-background text-foreground dark`}>
-        <CartProvider>
-          {children}
-        </CartProvider>
+        <AuthProvider>
+          <CartProvider>
+            {children}
+            <Toaster />
+          </CartProvider>
+        </AuthProvider>
         <Analytics />
       </body>
     </html>
